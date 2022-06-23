@@ -12,7 +12,7 @@ export class AccountsService {
   constructor(private http : HttpClient) { }
 
   public getAccount(accountId : string, page : number, size : number):Observable<AccountDetails>{
-    return this.http.get<AccountDetails>(environment.backendHost+"/accounts/"+accountId+"/pageOperations?page="+page+"&size="+size);
+   return this.http.get<AccountDetails>(environment.backendHost+"/accounts/"+accountId+"/pageOperations?page="+page+"&size="+size);
   }
   public debit(accountId : string, amount : number, description:string){
     let data={accountId : accountId, amount : amount, description : description}
